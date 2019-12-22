@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #Heading {
+        width: 100%;
+        height: 100px;
+        background-color: darkcyan;
+        text-align: center;
+      }
+      #Menu {
+        width: 20%;
+        height: 400px;
+        background-color: darkturquoise;
+        float: left;
+      }
+      #Section {
+        width: 80%;
+        height: 400px;
+        background-color: rgb(152, 218, 230);
+        float: right;
+      }
+      #Footer {
+        width: 100%;
+        height: 74px;
+        background-color: darkgrey;
+      }
+      .clearfix {
+        clear: both;
+      }
+      #Heading nav li {
+        float: left;
+        list-style-type: none; /*點點消失*/
+        margin: 5px;
+        float: 100px;
+      }
+      #Heading nav a {
+        background-color: darksalmon;
+        padding: 5px;
+      }
+      #Heading nav a:hover {
+        /*按了之後的顏色*/
+        background-color: crimson;
+      }
+      #Heading ul {
+        padding: 0px;
+      }
+    </style>
+    <script>
+      function changeColor(index) {
+        const p = document.getElementById("Section");
+        console.log(p);
+
+        // if (index === 1) p.style.backgroundColor = "yellow";
+        // else if (index === 2) p.style.backgroundColor = "azure";
+        // else if (index === 3) p.style.backgroundColor = "cornflowerblue";
+
+        switch (index) {
+          case 1:
+            p.style.backgroundColor = "yellow";
+            break;
+          case 2:
+            p.style.backgroundColor = "azure";
+            break;
+          case 3:
+            p.style.backgroundColor = "cornflowerblue";
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="Heading">
+      Heading
+      <nav>
+        <ul>
+          <li onclick="changeColor(1)"><a href="#">Link1</a></li>
+          <li onclick="changeColor(2)"><a href="#">Link2</a></li>
+          <li onclick="changeColor(3)"><a href="#">Link3</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="Menu">Menu</div>
+    <div id="Section">Section</div>
+    <div class="clearfix"></div>
+    <div id="Footer">Footer</div>
+  </body>
+</html>

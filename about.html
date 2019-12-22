@@ -1,0 +1,445 @@
+﻿<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link href="css/vendor/bootstrap.css" rel="stylesheet" />
+    <link href="css/vendor/font-awesome.css" rel="stylesheet" />
+    <link href="css/vendor/slick.css" rel="stylesheet" />
+    <link href="css/vendor/slick-theme.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+
+  <script>
+    //宣告預設表單內容為空
+    var initSubject = "",
+      initBody = "";
+
+    //按下傳送按鈕後執行
+    function submitHandler() {
+      var to = "contact@example.com"; //寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
+      var name = nameText.value; //讀取ID為 nameTextuser 物件中的值
+      var email = emailText.value;
+      var tel = telText.value;
+      var subject = subText.value;
+      //把user填的資料都塞到 mail body 中
+      var body = "" + bodyText.value + "%0A%0A%0A"; //%0A是換行 換了三行
+      body += "From：" + nameText.value + "%0A";
+      body += "Email：" + emailText.value + "%0A";
+      body += "Tel：" + telText.value;
+      //傳送的主要程式碼
+      mailTo.href = "mailto:" + to + "?subject=" + subject + "&body=" + body;
+      mailTo.click();
+    }
+    //在body onload
+    function init() {
+      subText.value = initSubject;
+      toText.value = initTo;
+      bodyText.value = initBody;
+    }
+  </script>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"><img src="assets/img/logo.png" alt=""/></a>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tku.html">TKU</a></li>
+            <li><a href="about.html" class="active">About Me</a></li>
+          </ul>
+        </div>
+        <div class="mobile-menu"><i class="fa fa-bars"></i></div>
+      </div>
+    </header>
+
+    <div class="intro-page">
+      <div class="container">
+        <h1>About Me</h1>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <section class="keep-touch" wfd-id="10">
+        <div class="container" wfd-id="11">
+          <h2>Let's make friends</h2>
+          <span class="dot-dash dark" wfd-id="18">.</span>
+          <div class="row" wfd-id="12">
+            <div class="col-md-5" wfd-id="16">
+              <div class="keep-touch--white" wfd-id="17">
+                <h4>My Adress</h4>
+                <p>Jingping Rd., Zhonghe Dist., New Taipei City<br />Taiwan</p>
+                <h4>Call Us</h4>
+                <p>+ 886 097 866 5766<br />+ 0222426726</p>
+                <h4>Email</h4>
+                <p>
+                  <a href="mailto:alanchourichy@email.com"
+                    >alanchourichy@gmail.com</a
+                  >
+                </p>
+              </div>
+            </div>
+            <body onload="init()">
+              <div class="col-md-7" wfd-id="13">
+                <div class="keep-touch--white" wfd-id="14">
+                  <h6>*為必填欄位</h6>
+                  <form enctype="text/plain" accept-charset="utf-8">
+                    <!-- 寄件者姓名    -->
+                    <input
+                      id="nameText"
+                      type="text"
+                      name="Name"
+                      value
+                      size="60"
+                      placeholder="name *"
+                      required
+                    />
+                    <!-- required 必填欄位 ，placeholder 預設內容-->
+
+                    <!-- 寄件者email -->
+                    <input
+                      id="emailText"
+                      type="text"
+                      name="Email"
+                      value
+                      size="60"
+                      placeholder="email *"
+                      required
+                    />
+
+                    <!-- 寄件者電話 -->
+                    <input
+                      id="telText"
+                      type="text"
+                      name="Phone"
+                      value
+                      size="60"
+                      aria-invalid="false"
+                      placeholder="phone"
+                    />
+
+                    <!-- 郵件主旨 -->
+                    <input
+                      id="subText"
+                      type="text"
+                      name="Subject"
+                      value
+                      size="60"
+                      aria-invalid="false"
+                      placeholder="subject *"
+                      required
+                    />
+
+                    <!-- 郵件內容 -->
+                    <textarea
+                      id="bodyText"
+                      name="your-message"
+                      cols="40"
+                      rows="10"
+                      aria-required="true"
+                      aria-invalid="false"
+                      placeholder="your Message *"
+                      required
+                    ></textarea>
+
+                    <!-- 傳送按鈕 -->
+                    <!-- <input type="submit" class="button small" wfd-id="32" /> -->
+                    <div>
+                      <input
+                        class="button small"
+                        type="submit"
+                        value="送出訊息"
+                        onclick="submitHandler();"
+                      />
+                      <a id="mailTo"></a>
+                    </div>
+                  </form>
+                  <!-- <form action="" wfd-id="15">
+                    <input type="text" placeholder="Name" wfd-id="35" />
+                    <input type="text" placeholder="Email" wfd-id="34" />
+                    <input type="text" placeholder="Subject" wfd-id="33" />
+                    <textarea
+                      name=""
+                      id=""
+                      rows="5"
+                      placeholder="Message"
+                      wfd-id="36"
+                    ></textarea>
+                    <input type="submit" class="button small" wfd-id="32" />
+                  </form> -->
+                </div>
+              </div>
+            </body>
+          </div>
+        </div>
+      </section>
+
+      <section class="our-team">
+        <div class="container">
+          <h2>My family</h2>
+          <span class="dot-dash dark">.</span>
+          <div class="our-team--container">
+            <div class="our-team--item">
+              <div class="our-team--item__image">
+                <img src="./照片/father.png" alt="" />
+              </div>
+              <div class="our-team--item__info">
+                <h3>Father</h3>
+                <h5 class="text-muted">Software Engineer</h5>
+              </div>
+            </div>
+            <div class="our-team--item">
+              <div class="our-team--item__image">
+                <img src="./照片/mother.png" alt="" />
+              </div>
+              <div class="our-team--item__info">
+                <h3>Mother</h3>
+                <h5 class="text-muted">Piano Teacher</h5>
+              </div>
+            </div>
+            <div class="our-team--item">
+              <div class="our-team--item__image">
+                <img src="./照片/me.png" alt="" />
+              </div>
+              <div class="our-team--item__info">
+                <h3>Me</h3>
+                <h5 class="text-muted">College Students</h5>
+              </div>
+            </div>
+            <div class="our-team--item">
+              <div class="our-team--item__image">
+                <img src="./照片/old sister.png" alt="" />
+              </div>
+              <div class="our-team--item__info">
+                <h3>Older Sisters</h3>
+                <h5 class="text-muted">Viola Teacher</h5>
+              </div>
+            </div>
+            <div class="our-team--item">
+              <div class="our-team--item__image">
+                <img src="./照片/young sister.png" alt="" />
+              </div>
+              <div class="our-team--item__info">
+                <h3>Younger Sisters</h3>
+                <h5 class="text-muted">College Students</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="our-services">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>關於我</h2>
+              <div class="our-services--element">
+                <h4>個性</h4>
+                <p>
+                  我的個性比較隨和，稱不上活潑但也跟別人聊得起來
+                </p>
+                <div class="our-services--element__image">
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="our-services--element">
+                <h4>興趣</h4>
+                <p>
+                  平實的我喜歡打籃球、玩電腦、跳街舞來解解悶
+                </p>
+                <div class="our-services--element__image">
+                  <i class="fa fa-gamepad" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="our-services--element">
+                <h4>專長</h4>
+                <p>善於邏輯推理及空間概念</p>
+                <div class="our-services--element__image">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="our-services--slider">
+          <div>
+            <img src="assets/img/services.png" alt="" />
+          </div>
+          <div>
+            <img src="assets/img/services.png" alt="" />
+          </div>
+          <div>
+            <img src="assets/img/services.png" alt="" />
+          </div>
+        </div>
+        <div class="our-services--dots"></div>
+      </section>
+
+      <section class="our-history-about">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <h2>My Growth History</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <ul class="timeline">
+                <li>
+                  <div class="timeline-image">
+                    <img
+                      class="rounded-circle img-fluid"
+                      src="assets/img/about1.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="timeline-panel">
+                    <div class="timeline-heading">
+                      <h4>March 2001</h4>
+                      <h4 class="subheading">The Beginning Of Me</h4>
+                    </div>
+                    <div class="timeline-body">
+                      <p class="text-muted">
+                        生於2001年的我，對充滿資訊科技的未來感到未知
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="timeline-inverted">
+                  <div class="timeline-image">
+                    <img
+                      class="rounded-circle img-fluid"
+                      src="assets/img/about2.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="timeline-panel">
+                    <div class="timeline-heading">
+                      <h4>2001-2013</h4>
+                      <h4 class="subheading">Sprout Of Interest</h4>
+                    </div>
+                    <div class="timeline-body">
+                      <p class="text-muted">
+                        有個軟體工程師職位的父親，不免俗的從小就在他的熏陶下也漸漸地對這一方面產生了興趣
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="timeline-image">
+                    <img
+                      class="rounded-circle img-fluid"
+                      src="assets/img/about3.gif"
+                      alt=""
+                    />
+                  </div>
+                  <div class="timeline-panel">
+                    <div class="timeline-heading">
+                      <h4>2014-2018</h4>
+                      <h4 class="subheading">From Interest To Practice</h4>
+                    </div>
+                    <div class="timeline-body">
+                      <p class="text-muted">
+                        起初只是有興趣，而從無去實踐，長大點了，開始自己上網學習，才發現資訊的世界是如此的廣泛且豐富，也有跑去書店買關於App的書來練習過，可能在這個階段，才是真正燃起對資工的求知慾
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="timeline-inverted">
+                  <div class="timeline-image">
+                    <img
+                      class="rounded-circle img-fluid"
+                      src="assets/img/about4.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="timeline-panel">
+                    <div class="timeline-heading">
+                      <h4>2019</h4>
+                      <h4 class="subheading">Planned Learning</h4>
+                    </div>
+                    <div class="timeline-body">
+                      <p class="text-muted">
+                        追隨著大學老師的步伐一步一腳印的打好基礎，在課餘之時也拼命的充實自己的能力，希望在未來，能成為一位真正厲害的工程師
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="timeline-inverted">
+                  <div class="timeline-image">
+                    <h4>
+                      Marching
+                      <br />
+                      forward to the
+                      <br />
+                      dream
+                    </h4>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="get-started">
+        <div class="container">
+          <h2>You want to know more?</h2>
+          <a href="index.html" class="button">Click here</a>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <ul>
+              <li>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100005797501623"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/?hl=zh-tw"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                您是第
+                <img
+                  src="https://counter8.freecounter.ovh/private/freecounterstat.php?c=jul26rmnyyjrf8u5tmglutur559pkqwa"
+                  border="0"
+                  title="website counter"
+                  alt="website counter"
+                />
+                位訪客
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <p>
+              <a href="index.html">回首頁</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/vendor/jquery-3.1.0.min.js"></script>
+    <script src="js/vendor/jquery.easing.min.js"></script>
+    <script src="js/vendor/tether.js"></script>
+    <script src="js/vendor/bootstrap.js"></script>
+    <script src="js/vendor/slick.js"></script>
+    <script src="js/vendor/isotope.pkgd.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

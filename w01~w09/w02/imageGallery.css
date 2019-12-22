@@ -1,0 +1,28 @@
+#line1 img {
+  width: 30%;
+  margin: 1.66%;
+  float: left;
+}
+#line2 img {
+  width: 22%;
+  margin: 1.5%;
+  float: left;
+}
+#line3 img {
+  width: 17%;
+  margin: 1.5%;
+  float: left;
+}
+.clearfix {
+  clear: both; /*都清除浮動*/
+}
+p {
+  text-transform: uppercase; /*大寫*/
+  font-family: Arial, Helvetica, sans-serif; /*字體*/
+  font-size: 100px; /*整體大小*/
+  font-weight: bold; /*粗體'*/
+  margin: 1.66%;
+  border-bottom: 2px solid #f1f1f1;
+  width: 30%;
+  padding-bottom: 15px;
+}
